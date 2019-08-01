@@ -7,7 +7,7 @@ var Client = kafka.KafkaClient;
 var argv = require('optimist').argv;
 var topic = argv.topic || 'ui-topic';
 
-var client = new Client({ kafkaHost: 'my-cluster-kafka-external-bootstrap:9091' });
+var client = new Client({ kafkaHost: '172.30.163.249:30228' });
 var topics = [{ topic: topic, partition: 1 }, { topic: topic, partition: 0 }];
 var options = { autoCommit: false, fetchMaxWaitMs: 1000, fetchMaxBytes: 1024 * 1024 };
 
