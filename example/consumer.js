@@ -5,9 +5,9 @@ var Consumer = kafka.Consumer;
 var Offset = kafka.Offset;
 var Client = kafka.KafkaClient;
 var argv = require('optimist').argv;
-var topic = argv.topic || 'topic1';
+var topic = argv.topic || 'ui-topic';
 
-var client = new Client({ kafkaHost: 'localhost:9092' });
+var client = new Client({ kafkaHost: 'my-cluster-kafka-external-bootstrap:9091' });
 var topics = [{ topic: topic, partition: 1 }, { topic: topic, partition: 0 }];
 var options = { autoCommit: false, fetchMaxWaitMs: 1000, fetchMaxBytes: 1024 * 1024 };
 
